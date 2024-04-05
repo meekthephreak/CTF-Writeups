@@ -24,7 +24,7 @@
   - LinPEAS
 
 - Major Findings:
-  - Web server allowed for execution within an unsecure URL parameter
+  - Web server allowed for browser code execution within an unsecure URL parameter
   - Exposed credentials in config.php
   - Unsecure FTP server
   - Old kernel version led to Privilege Escalation
