@@ -14,7 +14,7 @@
 - Key vulnerabilities exploited:
   - Insecure FTP server
   - Vulnerable Apache Web Server
-  - Old Kernel Version (4.1.3 generic)
+  - Old Kernel Version (4.4.0-31-generic)
 
 - Tools and techniques used:
   - Nmap
@@ -27,6 +27,7 @@
   - Web server allowed for execution within an unsecure URL parameter
   - Exposed credentials in config.php
   - Unsecure FTP server
+  - Old kernel version led to Privilege Escalation
 
 - Recommendations:
   - Avoid using FTP; use SFTP instead
