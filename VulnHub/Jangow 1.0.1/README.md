@@ -5,7 +5,7 @@
 - **Name:** Mikhail Wilson
 - **GitHub:** <https://github.com/meekthephreak>
 - **Twitter:** <https://twitter.com/meekthephreak>
-- **LinkedIn:** <https://www.linkedin.com>
+- **LinkedIn:** <https://www.linkedin.com/in/mikhail-wilson-05a45a51/>
 - **Website:** <https://www.thecyberphreak.com>
 
 ## TL;DR Summary
