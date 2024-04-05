@@ -41,3 +41,18 @@
 - **Difficulty:** Beginner
 - **Objectives:** Capture the user and root flags
 - **Tools Used:** Nmap, Gobuster, Searchsploit, ExploitDB, LinPEAS
+
+## Pre-Engagement
+
+### Scope Definition
+
+- **Scope:**
+  - Target: Jangow01 Virtual Machine
+  - Local Environment Only
+
+### Rules of Engagement
+
+- **ROE:**
+  - No Network Activity (*Keep it in the sandbox*)
+  - Hack Responsibly! : )
+  
