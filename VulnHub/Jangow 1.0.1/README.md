@@ -31,7 +31,7 @@
 
 - Recommendations:
   - Avoid using FTP; use SFTP instead
-  - Disable anonymous user file upload/retrieval
+  - Disable anonymous user file upload/retrieval (vsfptd.config file)
   - Keep kernel updated to the latest version
 
 ## Introduction
