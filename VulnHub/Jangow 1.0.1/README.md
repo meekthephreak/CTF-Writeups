@@ -54,5 +54,5 @@
 
 - **ROE:**
   - No Network Activity (*Keep it in the sandbox*)
-  - Hack Responsibly! : )
+  - Hack Responsibly! 😊
   
