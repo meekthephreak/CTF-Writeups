@@ -66,7 +66,7 @@ We are provided with the IP address `192.168.56.118`
 ![alt text](<Screenshot 2024-04-07 175344.png>)
 
 - **Port Scanning:**
-Using Nmap, we scan for active ports on the host.
+Using `Nmap`, we scan for active ports on the host.
 
 ```bash
 nmap -sV -sC 192.168.56.118
