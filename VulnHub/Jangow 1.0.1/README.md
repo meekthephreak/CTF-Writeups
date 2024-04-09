@@ -63,7 +63,7 @@
 - **Host Discovery:**
 We are provided with the IP address `192.168.56.118`
 
-![alt text](<Screenshot 2024-04-07 175344.png>)
+![alt text](<image1.png>)
 
 - **Port Scanning:**
 Using `Nmap`, we scan for active ports on the host.
@@ -72,7 +72,7 @@ Using `Nmap`, we scan for active ports on the host.
 nmap -sV -sC 192.168.56.118
 ```
 
-![alt text](image.png)
+![alt text](image2.png)
 
 We found ports `80` and `21`.
 
