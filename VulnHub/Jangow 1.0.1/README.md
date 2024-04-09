@@ -81,3 +81,22 @@ We found ports `80` and `21`.
   - Apache httpd 2.4.18
 
 We can try to exploit these later!
+
+## Vulnerability Analysis
+
+First, we startup `Gobuster` to start directory bruteforcing on the web server, using a built-in wordlist.
+
+```bash
+gobuster dir -u 192.168.56.118 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+```
+
+While that's running, we can open `http://192.168.56.118` in the browser.
+
+![alt text](image3.png)
+
+Lets click on the `site/` link to see what we find.
+
+![alt text](image4.png)
+
+We find a webpage with links at the top to explore. `Buscar` looks interesting...
+
