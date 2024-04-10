@@ -100,3 +100,32 @@ Lets click on the `site/` link to see what we find.
 
 We find a webpage with links at the top to explore. `Buscar` looks interesting...
 
+## Exploitation
+
+![alt text](image5.png)
+
+It seems to be an empty webpage, but lets see if the `buscar=` parameter is vulnerable.
+
+![alt text](image6.png)
+
+Boom! Typing `pwd` into the URL gives us output. We have code execution! Now lets see if we can list the directory contents.
+
+![alt text](image7.png)
+
+It works let's explore further.
+
+![alt text](image8.png)
+
+After looking around for a bit, we found an interesting file named `.backup`.
+
+![alt text](image9.png)
+
+We found credentials inside of the file, let's see if they work for the ftp server.
+
+![alt text](image10.png)
+
+We successfully logged in using username `jangow01` and password `abygurl69`. Let's first look in the `/home` directory.
+
+![alt text](image11.png)
+
+We found the flage `user.txt` and moved it to our local machine using `get user.txt`.
