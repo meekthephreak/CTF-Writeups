@@ -128,4 +128,4 @@ We successfully logged in using username `jangow01` and password `abygurl69`. Le
 
 ![alt text](image11.png)
 
-We found the flage `user.txt` and moved it to our local machine using `get user.txt`.
+We found the flag `user.txt` and moved it to our local machine using `get user.txt`.
