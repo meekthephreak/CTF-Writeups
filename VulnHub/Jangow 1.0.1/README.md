@@ -129,3 +129,41 @@ We successfully logged in using username `jangow01` and password `abygurl69`. Le
 ![alt text](image11.png)
 
 We found the flag `user.txt` and moved it to our local machine using `get user.txt`.
+
+Next, lets try to login to the machine using the same leaked credentials we found earlier.
+
+![alt text](image12.png)
+
+Success! Now we can begin the Post-Exploitation phase.
+
+## Post Exploitation
+
+-**Privilege Escalation**
+
+Next, lets try using LinPeas to find likely attack vectors to escalate our privileges.
+
+![alt text](image13.png)
+
+Using FTP we upload the file to the `/home/jangow01` directory with the command `put linpeas.sh`.
+
+Next, we make the file executable and send the output to a log file for further analysis.
+
+```bash
+jangow01@jangow01:~$ chmod + x linpeas.sh
+jangow01@jangow01:~$ ./linpeas.sh >> linpeas.log
+```
+![alt text](image13-1.png)
+
+The kernel version `4.4.0.31-generic` seems vulnerable. Lets look into this further.
+
+![alt text](image14.png)
+
+Download the exploit,transfer via FTP and see if it works to gain root access.
+
+![alt text](image15.png)
+
+We've gained root access, time to find the flag!
+
+![alt text](image16.png)
+
+Root Flag!
