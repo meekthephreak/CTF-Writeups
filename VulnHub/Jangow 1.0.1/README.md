@@ -67,7 +67,7 @@ tags: ['Vulnhub', 'CTF', 'medium']
 - **Host Discovery:**
 We are provided with the IP address `192.168.56.118`
 
-![alt text](https://github.com/meekthephreak/CTF-Writeups/blob/main/VulnHub/Jangow%201.0.1/image1.png)
+![alt text](https://raw.githubusercontent.com/meekthephreak/CTF-Writeups/main/VulnHub/Jangow%201.0.1/image1.png)
 
 - **Port Scanning:**
 Using `Nmap`, we scan for active ports on the host.
