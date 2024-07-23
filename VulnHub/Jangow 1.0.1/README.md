@@ -1,5 +1,5 @@
 ---
-title: "Test Publish Medium Article With Local Images"
+title: "Jangow: 1.0.1 Walkthrough"
 tags: ['Vulnhub', 'CTF', 'medium']
 ---
 # Jangow: 1.0.1 Walkthrough
