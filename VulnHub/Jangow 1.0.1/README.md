@@ -76,7 +76,7 @@ Using `Nmap`, we scan for active ports on the host.
 nmap -sV -sC 192.168.56.118
 ```
 
-![alt text](image2.png)
+![alt text](https://raw.githubusercontent.com/meekthephreak/CTF-Writeups/main/VulnHub/Jangow%201.0.1/image2.png)
 
 We found ports `80` and `21`.
 
@@ -96,47 +96,47 @@ gobuster dir -u 192.168.56.118 -w /usr/share/wordlists/dirbuster/directory-list-
 
 While that's running, we can open `http://192.168.56.118` in the browser.
 
-![alt text](image3.png)
+![alt text](https://raw.githubusercontent.com/meekthephreak/CTF-Writeups/main/VulnHub/Jangow%201.0.1/image3.png)
 
 Lets click on the `site/` link to see what we find.
 
-![alt text](image4.png)
+![alt text](https://raw.githubusercontent.com/meekthephreak/CTF-Writeups/main/VulnHub/Jangow%201.0.1/image4.png)
 
 We find a webpage with links at the top to explore. `Buscar` looks interesting...
 
 ## Exploitation
 
-![alt text](image5.png)
+![alt text](https://raw.githubusercontent.com/meekthephreak/CTF-Writeups/main/VulnHub/Jangow%201.0.1/image5.png)
 
 It seems to be an empty webpage, but lets see if the `buscar=` parameter is vulnerable.
 
-![alt text](image6.png)
+![alt text](https://raw.githubusercontent.com/meekthephreak/CTF-Writeups/main/VulnHub/Jangow%201.0.1/image6.png)
 
 Boom! Typing `pwd` into the URL gives us output. We have code execution! Now lets see if we can list the directory contents.
 
-![alt text](image7.png)
+![alt text](https://raw.githubusercontent.com/meekthephreak/CTF-Writeups/main/VulnHub/Jangow%201.0.1/image7.png)
 
 It works let's explore further.
 
-![alt text](image8.png)
+![alt text](https://raw.githubusercontent.com/meekthephreak/CTF-Writeups/main/VulnHub/Jangow%201.0.1/image8.png)
 
 After looking around for a bit, we found an interesting file named `.backup`.
 
-![alt text](image9.png)
+![alt text](https://raw.githubusercontent.com/meekthephreak/CTF-Writeups/main/VulnHub/Jangow%201.0.1/image9.png)
 
 We found credentials inside of the file, let's see if they work for the ftp server.
 
-![alt text](image10.png)
+![alt text](https://raw.githubusercontent.com/meekthephreak/CTF-Writeups/main/VulnHub/Jangow%201.0.1/image10.png)
 
 We successfully logged in using username `jangow01` and password `abygurl69`. Let's first look in the `/home` directory.
 
-![alt text](image11.png)
+![alt text](https://raw.githubusercontent.com/meekthephreak/CTF-Writeups/main/VulnHub/Jangow%201.0.1/image11.png)
 
 We found the flag `user.txt` and moved it to our local machine using `get user.txt`.
 
 Next, lets try to login to the machine using the same leaked credentials we found earlier.
 
-![alt text](image12.png)
+![alt text](https://raw.githubusercontent.com/meekthephreak/CTF-Writeups/main/VulnHub/Jangow%201.0.1/image12.png)
 
 Success! Now we can begin the Post-Exploitation phase.
 
@@ -146,7 +146,7 @@ Success! Now we can begin the Post-Exploitation phase.
 
 Next, lets try using LinPeas to find likely attack vectors to escalate our privileges.
 
-![alt text](image13.png)
+![alt text](https://raw.githubusercontent.com/meekthephreak/CTF-Writeups/main/VulnHub/Jangow%201.0.1/image13.png)
 
 Using FTP we upload the file to the `/home/jangow01` directory with the command `put linpeas.sh`.
 
@@ -156,18 +156,18 @@ Next, we make the file executable and send the output to a log file for further 
 jangow01@jangow01:~$ chmod + x linpeas.sh
 jangow01@jangow01:~$ ./linpeas.sh >> linpeas.log
 ```
-![alt text](image13-1.png)
+![alt text](https://raw.githubusercontent.com/meekthephreak/CTF-Writeups/main/VulnHub/Jangow%201.0.1/image13-1.png)
 
 The kernel version `4.4.0.31-generic` seems vulnerable. Lets look into this further.
 
-![alt text](image14.png)
+![alt text](https://raw.githubusercontent.com/meekthephreak/CTF-Writeups/main/VulnHub/Jangow%201.0.1/image14.png)
 
 Download the exploit,transfer via FTP and see if it works to gain root access.
 
-![alt text](image15.png)
+![alt text](https://raw.githubusercontent.com/meekthephreak/CTF-Writeups/main/VulnHub/Jangow%201.0.1/image15.png)
 
 We've gained root access, time to find the flag!
 
-![alt text](image16.png)
+![alt text](https://raw.githubusercontent.com/meekthephreak/CTF-Writeups/main/VulnHub/Jangow%201.0.1/image16.png)
 
 Root Flag!
